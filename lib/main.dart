@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:pokelibrary/modal/pokemon.dart';
+import 'dart:convert';
 
 void main() => runApp(MyApp());
 
@@ -13,6 +14,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var url =
       'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json';
+
+  PokeData pokeData;
+
   void initState() {
     super.initState();
     fetchData();
@@ -42,5 +46,10 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void fetchData() async {}
+  void fetchData() async {
+    var res = await http.get(url);
+    var decodedJson = jsonDecode(res.body);
+
+    pokeData = PokeData.fromJson(decodedJson);
+  }
 }
