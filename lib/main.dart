@@ -34,7 +34,23 @@ class _MyAppState extends State<MyApp> {
         ),
         body: GridView.count(
             crossAxisCount: 2,
-            children: pokeData.pokemon.map((poke) => Card()).toList()),
+            children: pokeData.pokemon
+                .map((poke) => Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Card(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: NetworkImage(poke.img))))
+                          ],
+                        ),
+                      ),
+                    ))
+                .toList()),
         floatingActionButton: FloatingActionButton(
             onPressed: null,
             backgroundColor: Colors.cyan,
