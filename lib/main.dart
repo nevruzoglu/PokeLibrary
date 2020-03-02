@@ -32,11 +32,9 @@ class _MyAppState extends State<MyApp> {
           title: Text('PokeLibrary'),
           backgroundColor: Colors.cyan,
         ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
+        body: GridView.count(
+            crossAxisCount: 2,
+            children: pokeData.pokemon.map((poke) => Card()).toList()),
         floatingActionButton: FloatingActionButton(
             onPressed: null,
             backgroundColor: Colors.cyan,

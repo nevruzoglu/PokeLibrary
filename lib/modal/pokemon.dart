@@ -9,7 +9,7 @@ PokeData pokeDataFromJson(String str) => PokeData.fromJson(json.decode(str));
 String pokeDataToJson(PokeData data) => json.encode(data.toJson());
 
 class PokeData {
-  final List<Pokemon> pokemon;
+  List<Pokemon> pokemon;
 
   PokeData({
     this.pokemon,
@@ -26,23 +26,23 @@ class PokeData {
 }
 
 class Pokemon {
-  final int id;
-  final String num;
-  final String name;
-  final String img;
-  final List<Type> type;
-  final String height;
-  final String weight;
-  final String candy;
-  final int candyCount;
-  final Egg egg;
-  final double spawnChance;
-  final double avgSpawns;
-  final String spawnTime;
-  final List<double> multipliers;
-  final List<Type> weaknesses;
-  final List<Evolution> nextEvolution;
-  final List<Evolution> prevEvolution;
+  int id;
+  String num;
+  String name;
+  String img;
+  List<Type> type;
+  String height;
+  String weight;
+  String candy;
+  int candyCount;
+  Egg egg;
+  double spawnChance;
+  double avgSpawns;
+  String spawnTime;
+  List<double> multipliers;
+  List<Type> weaknesses;
+  List<Evolution> nextEvolution;
+  List<Evolution> prevEvolution;
 
   Pokemon({
     this.id,
@@ -132,8 +132,8 @@ final eggValues = EnumValues({
 });
 
 class Evolution {
-  final String num;
-  final String name;
+  String num;
+  String name;
 
   Evolution({
     this.num,
