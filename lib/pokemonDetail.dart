@@ -6,7 +6,24 @@ class PokeDetail extends StatelessWidget {
 
   PokeDetail({this.pokemon});
 
-  bodyWidget() => Stack();
+  bodyWidget() => Stack(
+        children: <Widget>[
+          Card(
+              child: Column(
+            children: <Widget>[
+              Text(pokemon.name),
+              Text('Height: ${pokemon.height}'),
+              Text('Weight : ${pokemon.weight}'),
+              Text('Types'),
+              Row(
+                  children: pokemon.type
+                      .map((t) =>
+                          FilterChip(label: Text('$t'), onSelected: (b) {}))
+                      .toList()),
+            ],
+          ))
+        ],
+      );
 
   @override
   Widget build(BuildContext context) {
