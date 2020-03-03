@@ -6,6 +6,8 @@ class PokeDetail extends StatelessWidget {
 
   PokeDetail({this.pokemon});
 
+  bodyWidget() => Stack();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +20,4 @@ class PokeDetail extends StatelessWidget {
       body: bodyWidget(),
     );
   }
-
-  bodyWidget() => Stack();
 }
