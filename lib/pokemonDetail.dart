@@ -17,8 +17,9 @@ class PokeDetail extends StatelessWidget {
               Text('Types'),
               Row(
                   children: pokemon.type
-                      .map((t) =>
-                          FilterChip(label: Text('$t'), onSelected: (b) {}))
+                      .map(
+                        (t) => FilterChip(label: Text(t), onSelected: (b) {}),
+                      )
                       .toList()),
             ],
           ))

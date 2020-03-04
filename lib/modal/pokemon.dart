@@ -30,7 +30,7 @@ class Pokemon {
   String num;
   String name;
   String img;
-  List<Type> type;
+  List<String> type;
   String height;
   String weight;
   String candy;
@@ -40,7 +40,7 @@ class Pokemon {
   double avgSpawns;
   String spawnTime;
   List<double> multipliers;
-  List<Type> weaknesses;
+  List<String> weaknesses;
   List<Evolution> nextEvolution;
   List<Evolution> prevEvolution;
 
@@ -69,7 +69,7 @@ class Pokemon {
         num: json["num"],
         name: json["name"],
         img: json["img"],
-        type: List<Type>.from(json["type"].map((x) => typeValues.map[x])),
+        type: List<String>.from(json["type"]),
         height: json["height"],
         weight: json["weight"],
         candy: json["candy"],
@@ -81,8 +81,7 @@ class Pokemon {
         multipliers: json["multipliers"] == null
             ? null
             : List<double>.from(json["multipliers"].map((x) => x.toDouble())),
-        weaknesses:
-            List<Type>.from(json["weaknesses"].map((x) => typeValues.map[x])),
+        weaknesses: List<String>.from(json["weaknesses"]),
         nextEvolution: json["next_evolution"] == null
             ? null
             : List<Evolution>.from(
