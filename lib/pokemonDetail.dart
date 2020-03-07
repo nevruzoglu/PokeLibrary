@@ -47,7 +47,9 @@ class PokeDetail extends StatelessWidget {
                               (t) => FilterChip(
                                 label: Text(
                                   t,
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 onSelected: (b) {},
                                 backgroundColor: Colors.red,
