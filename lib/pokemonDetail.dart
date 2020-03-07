@@ -9,17 +9,17 @@ class PokeDetail extends StatelessWidget {
   bodyWidget(context) => Stack(
         children: <Widget>[
           Positioned(
-            height: MediaQuery.of(context).size.height * 0.7,
+            height: MediaQuery.of(context).size.height * 0.6,
             width: MediaQuery.of(context).size.width - 20,
             left: 10,
-            top: MediaQuery.of(context).size.height * 0.1,
+            top: MediaQuery.of(context).size.height * 0.12,
             child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    SizedBox(height: 80),
+                    SizedBox(height: 50),
                     Text(
                       pokemon.name,
                       style:
@@ -27,7 +27,10 @@ class PokeDetail extends StatelessWidget {
                     ),
                     Text('Height: ${pokemon.height}'),
                     Text('Weight : ${pokemon.weight}'),
-                    Text('Types'),
+                    Text(
+                      'Types',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: pokemon.type
